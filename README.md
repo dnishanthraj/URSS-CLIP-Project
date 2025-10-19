@@ -5,7 +5,7 @@ It was developed as part of the **University of Warwick URSS Research Scheme (20
 
 ---
 
-## ?? Overview
+## Overview
 
 The system converts any raw video into:
 - **A concise highlight reel** (15 % of original length)
@@ -18,7 +18,7 @@ It is designed to run end-to-end on the **Warwick Kudu (Gecko) GPU cluster**.
 
 ---
 
-## ?? Pipeline Summary
+## Pipeline Summary
 
 | Stage | Description |
 |:------|:-------------|
@@ -33,7 +33,7 @@ It is designed to run end-to-end on the **Warwick Kudu (Gecko) GPU cluster**.
 
 ---
 
-## ?? Running on Kudu
+## Running on Kudu
 
 1. SSH into the cluster:
    ```bash
@@ -61,3 +61,31 @@ Output summary files appear in `../work/<video_id>_fixed2s/`
 ```bash
 streamlit run app.py
 ```
+
+## Requirements
+
+- **Python:** 3.10+
+- **Libraries (core):**  
+  `torch`, `open_clip_torch`, `transformers`, `moviepy`,  
+  `scikit-learn`, `streamlit`, `pytesseract`, `opencv-python`,  
+  `pandas`, `numpy`, `tqdm`, `pillow`, `scenedetect`
+- **Hardware:** GPU strongly recommended for BLIP captioning and text summarisation.
+
+Full environment specification is provided in **requirements.txt**, generated via `pip freeze`.  
+To install all dependencies:
+
+```bash
+pip install -r requirements.txt
+
+```
+
+## Requirements
+Evaluated on the TVSum benchmark (YFCC100M subset).
+Prompt banks derived from TVSum category tags and news-related semantic queries.
+
+## Citation / Acknowledgements
+
+- OpenAI CLIP (Radford et al., 2021)
+- Salesforce BLIP (Li et al., 2022)
+- Facebook BART (Lewis et al., 2020)
+- TVSum Dataset (Yale Song et al., CVPR 2015)
