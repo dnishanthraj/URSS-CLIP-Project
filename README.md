@@ -37,4 +37,27 @@ It is designed to run end-to-end on the **Warwick Kudu (Gecko) GPU cluster**.
 
 1. SSH into the cluster:
    ```bash
-   ssh yourusername@kudu.warwick.ac.uk
+   ssh kudu
+   ```
+
+2. Navigate to the project directory:
+
+```bash
+cd ~/urss/code
+```
+
+3. Submit a pipeline job for one video:
+
+```bash
+sbatch run_pipeline.sbatch XkqCExn6_Us.mp4
+```
+
+Logs are saved in `logs/`
+
+Output summary files appear in `../work/<video_id>_fixed2s/`
+
+4. Once completed, launch the Streamlit app locally or via port-forwarding:
+
+```bash
+streamlit run app.py
+```
