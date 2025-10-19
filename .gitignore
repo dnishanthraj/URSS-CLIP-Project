@@ -1,0 +1,15 @@
+# Python junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# Virtual environments
+venv/
+env/
+.venv/
+.venv-gpu/
+logs/
+
+sbatch*
